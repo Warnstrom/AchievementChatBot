@@ -1,0 +1,13 @@
+# Node related files
+./dist
+/dist
+./node_modules
+/node_modules
+.env
+package.json
+package-lock.json
+# Go related files
+../server/env
+*.log
+*.out
+*.exe
