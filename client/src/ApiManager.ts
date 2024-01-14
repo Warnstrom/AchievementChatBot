@@ -1,5 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { Option, Some, None } from './models/Experimental/experimentaltypes';
+import { ENV } from './config';
 
 class ApiManager {
   private api: AxiosInstance;
@@ -32,6 +33,6 @@ class ApiManager {
   }
 }
 
-const apiManager: ApiManager = new ApiManager(process.env.API_URL);
+const apiManager: ApiManager = new ApiManager(ENV.API_URL);
 
 export default apiManager;

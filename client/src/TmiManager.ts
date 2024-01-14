@@ -1,6 +1,7 @@
 import tmi, { Options, ChatUserstate } from 'tmi.js';
 import messageManager from './MessageManager';
 import CommandManager from './CommandManager';
+import { ENV } from './config';
 
 export class TMIManager {
   private tmiClient: tmi.Client;
@@ -49,7 +50,7 @@ const config: Options = {
     connection: { reconnect: true },
     identity: {
       username: 'Noraschair',
-      password: `oauth:${process.env.TWITCH_OAUTH}`,
+      password: `oauth:${ENV.TWITCH_OAUTH}`,
     },
     channels: ['noraschair', 'asecrettoeverybody'], // Channels are defined for development purpose
   };

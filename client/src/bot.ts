@@ -4,13 +4,12 @@ import TwitchEventSubListener from "./TwitchEventManager";
 import { TwitchHelix } from "./HelixManager";
 import achievementManager from "./AchievementManager";
 import { None, Option, Some } from "./models/Experimental/experimentaltypes";
+import { ENV } from "./config";
 
-require('dotenv').config()
-
-const helixManager = new TwitchHelix(process.env.CLIENT_ID, process.env.CLIENT_SECRET);
+const helixManager = new TwitchHelix(ENV.CLIENT_ID, ENV.CLIENT_SECRET);
 const twitchListener = new TwitchEventSubListener(
-  process.env.CLIENT_ID,
-  process.env.USER_ACCESS_TOKEN
+  ENV.CLIENT_ID,
+  ENV.USER_ACCESS_TOKEN
 );
 
 async function main() {
