@@ -9,7 +9,7 @@ class ApiManager {
     this.api = axios.create({
       baseURL,
       headers: {
-        Authorization: 'test',
+        Authorization: ENV.DB_AUTH_TOKEN,
       },
     });
   }

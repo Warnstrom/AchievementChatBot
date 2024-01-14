@@ -19,7 +19,8 @@ async function main() {
     if (result instanceof Some) {
     for (const channel of result.getValue()) {
       try {
-        const user = await helixManager.getUserByUsername(channel.channel_name);
+        const user = await helixManager.getUserByUsername("emmagrus");
+        console.log(user)
         await achievementManager.loadAchievements(channel.channel_id)
         await twitchListener.subscribeToEventSub([
           { type: 'stream.online', broadcaster_user_id: user.id },

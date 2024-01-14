@@ -7,7 +7,6 @@
 package.json
 package-lock.json
 # Go related files
-../server/env
 *.log
 *.out
 *.exe

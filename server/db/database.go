@@ -4,7 +4,6 @@ package db
 import (
 	"database/sql"
 	"fmt"
-	"log"
 	"os"
 	"time"
 
@@ -15,16 +14,14 @@ import (
 var DB *sql.DB
 
 var (
-	dbURL = "libsql://twitchchatachievements-warnstrom.turso.io?authToken=" + goDotEnvVariable("DB_AUTH_TOKEN")
+	dbURL = "libsql://" + goDotEnvVariable("DB_NAME") + ".turso.io?authToken=" + goDotEnvVariable("DB_AUTH_TOKEN")
 )
 
 func goDotEnvVariable(key string) string {
-
-	// load .env file
 	err := godotenv.Load(".env")
 
 	if err != nil {
-		log.Fatalf("Error loading .env file")
+		fmt.Printf("Error loading .env file")
 	}
 
 	return os.Getenv(key)

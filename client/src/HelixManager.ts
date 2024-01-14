@@ -22,7 +22,7 @@ export class TwitchHelix {
 
   private async makeApiRequest(endpoint: string, params: Record<string, any> = {}): Promise<AxiosResponse<any>> {
     const response = await axios.get(`https://api.twitch.tv/helix/${endpoint}`, {
-      headers: {
+      headers: {  
         'Client-ID': this.clientId,
         'Authorization': `Bearer ${this.clientSecret}`,
       },
